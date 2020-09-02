@@ -1,6 +1,6 @@
 'use strict';
 
-const DefaultRegex = "\/vendor\/|go\.mod|go\.sum";
+const DefaultRegex = "\/?vendor\/";
 
 chrome.runtime.onInstalled.addListener(function () {
   chrome.storage.sync.set({fileRegex: DefaultRegex});
