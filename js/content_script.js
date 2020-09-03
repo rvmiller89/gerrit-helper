@@ -1,8 +1,8 @@
-chrome.storage.sync.get("fileRegex", function (data) {
+chrome.storage.sync.get("fileRegex", async function (data) {
   var regex = new RegExp(data.fileRegex)
 
   // Expand all files if necessary
-  showAllFiles()
+  await showAllFiles()
 
   files = toggleFiles(getFileList(), regex)
 
@@ -15,8 +15,11 @@ function showAllFiles() {
   ) {
     return
   }
+  document.querySelector("#app").shadowRoot.querySelector("#app-element").shadowRoot.querySelector("main > gr-change-view").shadowRoot.querySelector("#fileList").shadowRoot.querySelector("#showAllButton").click()
 
-  document.querySelector("#app").shadowRoot.querySelector("#app-element").shadowRoot.querySelector("main > gr-change-view").shadowRoot.querySelector("#fileList").shadowRoot.querySelector("div.row.controlRow > gr-tooltip-content").click()
+  while (document.querySelector("#app").shadowRoot.querySelector("#app-element").shadowRoot.querySelector("main > gr-change-view").shadowRoot.querySelector("#fileList").shadowRoot.querySelector("div.row.controlRow.invisible") === null) {
+   continue 
+  }
 }
 
 function getFileList() {
