@@ -1,6 +1,4 @@
-chrome.storage.sync.get({
-  fileRegex: "\/?vendor\/"
-}, function (data) {
+chrome.storage.sync.get("fileRegex", function (data) {
   var regex = new RegExp(data.fileRegex)
 
   // Expand all files if necessary
