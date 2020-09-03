@@ -6,9 +6,9 @@ chrome.storage.sync.get({
   // Expand all files if necessary
   showAllFiles()
 
-  hiddenFiles = hideFiles(getFileList(), regex)
+  files = toggleFiles(getFileList(), regex)
 
-  console.log("Filtered the following files from being shown:", "\n------\n", hiddenFiles.join("\n "))
+  console.log("The following files are affected by the filter: ".concat(data.fileRegex), "\n------\n", files.join("\n "))
 });
 
 function showAllFiles() {
@@ -27,7 +27,7 @@ function getFileList() {
   return elements.children
 }
 
-function hideFiles(elementList, regex) {
+function toggleFiles(elementList, regex) {
   hiddenFiles = []
   for (elementPos = elementList.length - 1; elementPos >= 0; elementPos--) {
     let element = elementList[elementPos]
@@ -39,7 +39,7 @@ function hideFiles(elementList, regex) {
 
     if (regex.test(filePath)) {
       hiddenFiles.push(filePath)
-      element.hidden = true
+      element.hidden = !element.hidden
     }
   }
 
