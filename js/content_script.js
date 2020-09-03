@@ -1,10 +1,12 @@
-chrome.storage.sync.get('fileRegex', function(data) {
+chrome.storage.sync.get({
+  fileRegex: "\/?vendor\/"
+}, function (data) {
   var regex = new RegExp(data.fileRegex)
 
   // Expand all files if necessary
   showAllFiles()
 
-  hiddenFiles = hideFiles(getFileList(), regex)  
+  hiddenFiles = hideFiles(getFileList(), regex)
 
   console.log("Filtered the following files from being shown:", "\n------\n", hiddenFiles.join("\n "))
 });
