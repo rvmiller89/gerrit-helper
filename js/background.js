@@ -1,5 +1,3 @@
-'use strict'
-
 const DefaultRegex = '/?vendor/'
 
 chrome.runtime.onInstalled.addListener(function () {
