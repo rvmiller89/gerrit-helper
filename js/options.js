@@ -1,14 +1,12 @@
 'use strict';
 
-function updateCurrentRegex() {
+function updateCurrentRegexHTMLMessage() {
   chrome.storage.sync.get("fileRegex", function (data) {
     document.getElementById("currentRegex").innerHTML = data.fileRegex
   })
 }
 
 function setupOptions() {
-  var saveButton = document.getElementById('saveButton');
-
   saveButton.onclick = function () {
     let newRegexString = document.getElementById("fileRegex").value
 
@@ -18,7 +16,7 @@ function setupOptions() {
     }
 
     chrome.storage.sync.set({ fileRegex: newRegexString })
-    updateCurrentRegex()
+    updateCurrentRegexHTMLMessage()
   }
 }
 
@@ -36,5 +34,5 @@ function isRegexValid(regexString) {
   return true
 }
 
-updateCurrentRegex()
+updateCurrentRegexHTMLMessage()
 setupOptions()
