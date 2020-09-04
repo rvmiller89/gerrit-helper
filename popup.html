@@ -2,12 +2,23 @@
 <html>
   <head>
     <title>Gerrit Helper</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
   </head>
   <body>
-    <h4>Gerrit Helper</h4>
-    <p>Current filter: <div id="currentRegex"></div></p>
-    <button id="toggleHide">Hide/Show</button>
-    <script src="js/popup.js"></script>
+    <div class="card" style="width: 16rem">
+      <h6 class="card-header">Gerrit Helper</h6>
+      <div class="card-body">
+        <p class="card-text">Regex filter:</p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <button class="btn btn-primary btn-sm" id="toggleHide">
+              Hide/Show
+            </button>
+          </div>
+          <input type="text" class="form-control" id="currentRegex" readonly />
+        </div>
+      </div>
+    </div>
   </body>
+  <script src="js/popup.js"></script>
 </html>

@@ -1,8 +1,6 @@
-'use strict'
-
 function updateCurrentRegexHTMLMessage() {
   chrome.storage.sync.get('fileRegex', function (data) {
-    document.getElementById('currentRegex').innerHTML = data.fileRegex
+    document.getElementById('fileRegex').value = data.fileRegex
   })
 }
 
@@ -17,6 +15,7 @@ function setupOptions() {
 
     chrome.storage.sync.set({ fileRegex: newRegexString })
     updateCurrentRegexHTMLMessage()
+    location.reload()
   }
 }
 

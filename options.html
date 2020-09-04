@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Gerrit Helper Options</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-
-<body>
-  <h1>Gerrit Helper Options</h1>
-  <div>
-    <p>Choose a file path regex to hide:</p>
-  </div>
-  <div>
-    <label>regex:
-      <input id="fileRegex" />
-    </label>
-  </div>
-  <div>
-    <p>Current regex filter: <div id="currentRegex"></div></p>
-  </div>
-  <button id="saveButton">save</button>
-</body>
-<script src="js/options.js"></script>
-
+  <head>
+    <title>Gerrit Helper Options</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="card" style="width: 16rem">
+      <h6 class="card-header">Gerrit Helper Options</h6>
+      <div class="card-body">
+        <label for="fileRegex">File path regex to hide:</label>
+        <input class="form-control" id="fileRegex" />
+        <br />
+        <button type="button" class="btn btn-primary" id="saveButton">
+          Save
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="js/options.js"></script>
 </html>
