@@ -6,16 +6,28 @@
   </head>
   <body>
     <div class="card" style="width: 16rem">
-      <h6 class="card-header">Gerrit Helper</h6>
+      <h6 class="card-header">
+        <img src="images/gerrit_helper32.png" />
+        Gerrit Helper
+        <button id="optionsButton" class="btn btn-secondary btn-sm float-right">
+          <img src="images/settings.png" />
+        </button>
+      </h6>
       <div class="card-body">
         <p class="card-text">Regex filter:</p>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <button class="btn btn-primary btn-sm" id="toggleHide">
-              Hide/Show
+              <img src="images/toggle.png" />
             </button>
           </div>
           <input type="text" class="form-control" id="currentRegex" readonly />
+        </div>
+        <div class="progress" id="progressBar" hidden="true">
+          <div
+            class="progress-bar progress-bar-striped progress-bar-animated"
+            style="width: 100%"
+          ></div>
         </div>
       </div>
     </div>
