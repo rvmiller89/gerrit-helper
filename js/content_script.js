@@ -105,7 +105,7 @@ function main() {
 
     showAllFiles()
       .then(() => toggleFiles(getFileList(), regex))
-      .then((files) =>
+      .then((files) => {
         console.log(
           'The following files were affected by the filter: `'
             .concat(data.fileRegex)
@@ -113,7 +113,8 @@ function main() {
           '\n------\n',
           files.join('\n ')
         )
-      )
+        chrome.runtime.sendMessage({ message: 'finishedToggle' })
+      })
   })
 }
 

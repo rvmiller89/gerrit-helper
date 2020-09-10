@@ -1,7 +1,7 @@
 {
   "name": "Gerrit Helper",
   "version": "1.0",
-  "description": "Hide generated files (e.g. \"vendor\") on Gerrit!",
+  "description": "Hide generated files (e.g. \"vendor\") on Gerrit based on regular expression.",
   "permissions": ["activeTab", "declarativeContent", "storage"],
   "options_page": "options.html",
   "background": {
